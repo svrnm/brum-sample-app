@@ -38,3 +38,13 @@ And start with the following configuration for **Agent Advanced Configuration JS
       };
 })(window["adrum-config"] || (window["adrum-config"] = {}));
 ```
+
+## Challenges
+
+You can now try to accomplish the following things without changing one line of the application code:
+
+* Collect the product price and attach it as custom user data to the page beacon
+* Collect the customer id and transaction id as custom user data for the /api/checkout AJAX call
+* Create two virtual pages, for the "Cart Page" (after add to cart was clicked) and for "Checkout" (when the green message box is displayed)
+* Create a custom metric that measures the time for processing the payment with "AppPaymanics"
+* Collect the total price (and other properties) from the cart and add them to the virtual page beacon for "Cart Page"
