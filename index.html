@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>AppDynamics BRUM Shop</title>
+    <script src="library.js"></script>
+    <script src="shop.js"></script>
+  </head>
+  <body>
+    <h1>AppDynamics BRUM Shop</h1>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQYV2Oor1P9DwAExAIifXDoqwAAAABJRU5ErkJggg==" id="logo" alt="AppDynamics - part of Cisco">
+    <div>
+	Buy one license of AppDynamics EUM for <span id="price"></span> Euro.
+    </div> 
+    <button id="addToCart" style="display: none;">
+      Add To Cart
+    </button>
+    <div id="checkout" style="display: none;">
+      <h2>Checkout</h2>
+      <table>
+        <tr>
+          <td>Product</td>
+          <td>#</td>
+          <td>Unit Price</td>
+          <td>Discount</td>
+          <td>Total Price</td>
+        </tr>
+        <tr>
+          <td>AppDynamics EUM</td>
+          <td id="unitCount"></td>
+          <td id="unitPrice"></td>
+          <td id="discount"></td>
+          <td id="linePrice"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Delivery<br>(via UPS)</td>
+          <td id="delivery"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><b>Total</b></td>
+          <td id="totalPrice"></td>
+        </tr>
+      </table>
+      <input id="customerId" type="text" placeholder="your customer ID" />
+      <div>
+        <input type="radio" name="payment_provider" id="payment_invoice" value="invoice" checked>Pay by invoice
+        <input type="radio" name="payment_provider" id="payment_apppaynamics" value="apppaynamics">Pay instantly with AppPaymanics
+      </div>
+      <button id="buy">Checkout</button>
+      <div id="message" style="display: none; background: green; color: white;">
+        Thanks for buying
+        <button id="reload">Reload</button>
+      </div>
+    </div>
+  </body>
+</html>
