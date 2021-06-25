@@ -48,3 +48,24 @@ You can now try to accomplish the following things without changing one line of 
 * Create two virtual pages, for the "Cart Page" (after add to cart was clicked) and for "Checkout" (when the green message box is displayed)
 * Create a custom metric that measures the time for processing the payment with "AppPaymanics"
 * Collect the total price (and other properties) from the cart and add them to the virtual page beacon for "Cart Page"
+
+Try out the following options to achieve your goals:
+
+* [Add an event listener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) on 'click' to a button
+* Use a [mutation observer](https://developer.mozilla.org/de/docs/Web/API/MutationObserver)
+* [Wrap an existing function](https://blog.sentry.io/2016/02/03/wrap-javascript-functions) like `window.fetch` with a proxy function
+* Leverage objects / APIs that are exposed by the web shop and the payment provider. Run the following code in the console of the developer tools to get a short list of candidates: 
+
+```javascript
+(function () {   
+    iframe = document.createElement('iframe');
+    document.body.appendChild(iframe);   
+    var results = Object.getOwnPropertyNames(window).filter(p => !iframe.contentWindow.hasOwnProperty(p)).map(p => {return {type: typeof window[p], name: p, value: window[p]}}).reduce((c,p) => {
+        if(!c[p.type]) c[p.type] = {};
+        c[p.type][p.name] = p.value;
+        return c;
+    }, {});
+    document.body.removeChild(iframe);   
+    return results;
+}());
+```
